@@ -6,12 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Weather App</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
 </head>
 
 <body>
-    <h1>Weather</h1>
-    <p id="location"></p>
-    <p id="temp"></p>
+
+    <p id="location">
+        <span></span>
+        <span></span>
+    </p>
+
+
+
+    <i class="default"></i>
+
+
+    <p id="current-temp-big">
+        <span id="temp"></span>
+        <span id="ctbicon">ºC</span>
+    </p>
+    <div class="atmospher">
+        <p>Atmospher Condition</p>
+        <div class="humidity">
+            <i class="wi wi-humidity"></i>
+            <span>Humidity</span>
+            <span id="humidity"></span>
+        </div>
+        <div class="pressue">
+            <i class="wi wi-barometer"></i>
+            <span>Pressure</span>
+            <span id="pressure"></span>
+        </div>
+        <div class="visiablity">
+            <i class="wi wi-day-cloudy-windy"></i>
+            <span>Visiablity</span>
+            <span id="visiablity"></span>
+        </div>
+    </div>
+
+    <div class="sun">
+        <p>Sunrise/Sunset</p>
+        <div class="sunrise">
+            <i class="wi wi-sunrise"></i>
+            <span>Sunrise</span>
+            <span id="sunrise"></span>
+        </div>
+        <div class="daylight">
+            <i class="wi wi-time-4"></i>
+            <span>Daylight</span>
+            <span id="daylight"></span>
+        </div>
+        <div class="sunset">
+            <i class="wi wi-sunset"></i>
+            <span>Sunset</span>
+            <span id="sunset"></span>
+        </div>
+    </div>
+
+    <div class="wind">
+        <p>Wind Condition</p>
+        <div id="chill" class="col-1">
+            <i class="wi wi-thermometer-exterior" aria-hidden="true"></i>
+            <span>Feels Like</span>
+            <span id="cd"></span>
+        </div>
+        <div id="direction" class="col-2">
+            <i class="wi wi-wind from-270-deg" aria-hidden="true"></i>
+            <span>Direction</span>
+            <span id="dd"></span>
+        </div>
+        <div id="speed" class="col-3">
+            <i class="wi wi-strong-wind" aria-hidden="true"></i>
+            <span>Speed</span>
+            <span id="sd"></span>
+        </div>
+    </div>
+
+
 </body>
 
 <script src="js/app.js"></script>
