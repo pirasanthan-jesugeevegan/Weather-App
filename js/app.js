@@ -13,11 +13,11 @@ function weather(position) {
     fetch(url)
         .then((resp) => resp.json())
         .then(function (data) {
-            console.log(data)
+
             let temp = Math.round(data.main.temp);
             let iconCode = data.weather[0].icon;
             let speedWind = Math.round(data.wind.speed) + " km/h";
-
+            console.log(iconCode)
             var SRD = new Date(data.sys.sunrise * 1000);
             var SSD = new Date(data.sys.sunset * 1000);
 
@@ -33,6 +33,9 @@ function weather(position) {
                         break;
                     case "10d":
                         return "wi-day-rain";
+                        break;
+                    case "04d":
+                        return "wi-cloudy";
                         break;
                     default:
                         return "3"
@@ -65,8 +68,8 @@ function weather(position) {
                 iconWind = "wi wi-direction-up-left";
             }
 
-
-            document.getElementsByTagName("I")[0].className = 'wi' + ' ' + getWeatherIcon(id);
+            document.getElementById("main").innerHTML = data.weather[0].main;
+            // document.getElementsByTagName("I")[0].className = 'wi' + ' ' + getWeatherIcon(id);
             document.getElementById("location").innerHTML = data.name;
             document.getElementById("temp").innerHTML = temp;
             document.getElementById("humidity").innerHTML = data.main.humidity + "%";
@@ -76,7 +79,7 @@ function weather(position) {
             document.getElementById("sunset").innerHTML = SSD.getHours() + ":" + SSD.getMinutes()
             document.getElementById("daylight").innerHTML = daylight
             document.getElementById("cd").innerHTML = data.main.feels_like;
-            document.getElementsByTagName("I")[8].className = iconWind;
+            //  document.getElementsByTagName("I")[8].className = iconWind;
             document.getElementById("dd").innerHTML = data.wind.deg + `°C`;
             document.getElementById("sd").innerHTML = speedWind;
         })
