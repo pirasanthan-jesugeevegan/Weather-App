@@ -29,16 +29,34 @@ function weather(position) {
             function getWeatherIcon(id) {
                 switch (id) {
                     case "01d":
-                        return "1";
+                        return "wi-day-sunny";
                         break;
-                    case "10d":
-                        return "wi-day-rain";
+                    case "02d":
+                        return "wi-day-cloudy";
+                        break;
+                    case "03d":
+                        return "wi-cloud";
                         break;
                     case "04d":
                         return "wi-cloudy";
                         break;
+                    case "09d":
+                        return "wi-day-rain";
+                        break;
+                    case "10d":
+                        return "wi-night-alt-rain";
+                        break;
+                    case "11d":
+                        return "wi-thunderstorm";
+                        break;
+                    case "13d":
+                        return "wi-snow";
+                        break;
+                    case "50d":
+                        return "wi-fog";
+                        break;
                     default:
-                        return "3"
+                        return "wi-day-cloudy"
                 }
             }
 
@@ -69,7 +87,7 @@ function weather(position) {
             }
 
             document.getElementById("main").innerHTML = data.weather[0].main;
-            // document.getElementsByTagName("I")[0].className = 'wi' + ' ' + getWeatherIcon(id);
+            document.getElementsByTagName("I")[1].className = 'wi' + ' ' + getWeatherIcon(id);
             document.getElementById("location").innerHTML = data.name;
             document.getElementById("temp").innerHTML = temp;
             document.getElementById("humidity").innerHTML = data.main.humidity + "%";
@@ -79,7 +97,7 @@ function weather(position) {
             document.getElementById("sunset").innerHTML = SSD.getHours() + ":" + SSD.getMinutes()
             document.getElementById("daylight").innerHTML = daylight
             document.getElementById("cd").innerHTML = data.main.feels_like;
-            //  document.getElementsByTagName("I")[8].className = iconWind;
+            document.getElementsByTagName("I")[9].className = iconWind;
             document.getElementById("dd").innerHTML = data.wind.deg + `°C`;
             document.getElementById("sd").innerHTML = speedWind;
         })
