@@ -98,7 +98,7 @@ function weather(position) {
             document.getElementById("daylight").innerHTML = daylight
             document.getElementById("cd").innerHTML = data.main.feels_like;
             document.getElementsByTagName("I")[9].className = iconWind;
-            document.getElementById("dd").innerHTML = data.wind.deg + `°C`;
+            document.getElementById("dd").innerHTML = data.wind.deg + `°`;
             document.getElementById("sd").innerHTML = speedWind;
         })
         .catch(function (error) {
