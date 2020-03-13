@@ -1,10 +1,11 @@
 $border-radius: 20px;
 $backgroundColor:#A64253;
-$appBackgroundColor:#C9CCD3;
+$appBackgroundColor:#8EC5FC;
 $font:sans-serif;
 body {
     background-color: $backgroundColor;
     font-family: $font;
+    
   } 
  
 *{
@@ -13,13 +14,15 @@ body {
 }
   .app{
     box-sizing: border-box;
-    background: $appBackgroundColor;
+    background-color:$appBackgroundColor;
+background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+
     position: absolute;
     top: 50%;
     left: 50%;
     
-    height: 80vh;
-    width: 40vh;
+   // height: 80vh;
+  //  width: 40vh;
     transform: translate(-50%, -50%);
     flex-wrap: wrap;
     border-radius: $border-radius;
@@ -34,10 +37,7 @@ body {
 
 
    #temp-div {
-    top: 200px;
-    position: relative;
-    width: 100%;
-    height: auto;
+    
     
  
     #current-temp-big{
@@ -60,13 +60,12 @@ body {
       
       margin: 0 auto;
       width: 100%;
-      font-size: 45px;
+      font-size: 35px;
     
     }
 }
 .weatherContent{
-  top: 200px;
-  position: relative;
+ 
 .atmospher {
   overflow: hidden;
   position: relative;
@@ -157,7 +156,9 @@ body {
 }   
 }
 
-
+#main{
+  display: inline-block;
+}
 .wi {
   display: inline-block;
     font-family: weathericons;

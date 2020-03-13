@@ -17,7 +17,7 @@ function weather(position) {
             let temp = Math.round(data.main.temp);
             let iconCode = data.weather[0].icon;
             let speedWind = Math.round(data.wind.speed) + " km/h";
-            console.log(iconCode)
+            console.log(data)
             var SRD = new Date(data.sys.sunrise * 1000);
             var SSD = new Date(data.sys.sunset * 1000);
 
