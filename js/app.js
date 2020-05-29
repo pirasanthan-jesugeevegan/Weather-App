@@ -15,7 +15,7 @@ fetch(API)
         let lat = locationData.latitude;
 
 
-        let weatherAPI = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + long + '&appid=' + apiKey + '&units=metric'
+        let weatherAPI = 'http://api.openweathermap.org/data/2.5/weather?lat=37.09024&lon=-95.712891&appid=3aab69399bf03eca438758bf6e33d18e&units=metric'
         fetch(weatherAPI).then((res) => res.json()).then(function (data) {
 
 
