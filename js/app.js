@@ -6,20 +6,22 @@ var data;
 var request = new XMLHttpRequest()
 
 //getting location using Ip API
-request.open('GET', 'https://ipapi.co/json/', true)
+request.open('GET', 'https://ipapi.co/json', true)
 request.onload = function () {
     // Begin accessing JSON data here
     var data = JSON.parse(this.response)
 
-    lat = data.latitude
-    long = data.longitude
 
-    const url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + long + '&appid=' + apiKey + '&units=metric'
+    lat = data.latitude
+    long = data.longitude;
+
+    const url = 'https://ipapi.co/json'
 
     fetch(url)
         .then((resp) => resp.json())
         .then(function (data) {
-
+            console.log(data)
+            let e = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + long + '&appid=' + apiKey + '&units=metric'
             let temp = Math.round(data.main.temp);
             let iconCode = data.weather[0].icon;
             let speedWind = Math.round(data.wind.speed) + " km/h";
