@@ -13,11 +13,9 @@ fetch(API)
 
         let long = locationData.longitude;
         let lat = locationData.latitude;
-
-
-        let weatherAPI = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + long + '&appid=' + apiKey + '&units=metric'
+        let weatherAPI = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + long + '&appid=' + apiKey + '&units=metric'
         fetch(weatherAPI).then((res) => res.json()).then(function (data) {
-            console.log(data.cod)
+            console.log(data)
             let temp = Math.round(data.main.temp);
             let iconCode = data.weather[0].icon;
             let speedWind = Math.round(data.wind.speed) + " km/h";
