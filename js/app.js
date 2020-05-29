@@ -90,7 +90,7 @@ fetch(API)
 
             document.getElementById("main").innerHTML = data.weather[0].main;
             document.getElementsByTagName("I")[1].className = 'wi' + ' ' + getWeatherIcon(id);
-            document.getElementById("location").innerHTML = data.cod;
+            document.getElementById("location").innerHTML = data.name;
             document.getElementById("temp").innerHTML = temp;
             document.getElementById("humidity").innerHTML = data.main.humidity + "%";
             document.getElementById("pressure").innerHTML = data.main.pressure + " mmHg";
