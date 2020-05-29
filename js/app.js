@@ -15,10 +15,9 @@ fetch(API)
         let lat = locationData.latitude;
 
 
-        let weatherAPI = 'http://api.openweathermap.org/data/2.5/weather?lat=37.09024&lon=-95.712891&appid=3aab69399bf03eca438758bf6e33d18e&units=metric'
+        let weatherAPI = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + long + '&appid=' + apiKey + '&units=metric'
         fetch(weatherAPI).then((res) => res.json()).then(function (data) {
-
-
+            console.log(data.cod)
             let temp = Math.round(data.main.temp);
             let iconCode = data.weather[0].icon;
             let speedWind = Math.round(data.wind.speed) + " km/h";
@@ -93,7 +92,7 @@ fetch(API)
 
             document.getElementById("main").innerHTML = data.weather[0].main;
             document.getElementsByTagName("I")[1].className = 'wi' + ' ' + getWeatherIcon(id);
-            document.getElementById("location").innerHTML = data.name;
+            document.getElementById("location").innerHTML = data.cod;
             document.getElementById("temp").innerHTML = temp;
             document.getElementById("humidity").innerHTML = data.main.humidity + "%";
             document.getElementById("pressure").innerHTML = data.main.pressure + " mmHg";
