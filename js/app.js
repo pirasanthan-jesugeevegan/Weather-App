@@ -5,23 +5,20 @@ var lat;
 var data;
 var request = new XMLHttpRequest()
 
-//getting location using Ip API
-request.open('GET', 'https://ipapi.co/json', true)
-request.onload = function () {
-    // Begin accessing JSON data here
-    var data = JSON.parse(this.response)
+//API URL
+const API = 'https://ipapi.co/json'
+fetch(API)
+    .then((resp) => resp.json())
+    .then(function (locationData) {
+
+        let long = locationData.longitude;
+        let lat = locationData.latitude;
 
 
-    lat = data.latitude
-    long = data.longitude;
+        let weatherAPI = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + long + '&appid=' + apiKey + '&units=metric'
+        fetch(weatherAPI).then((res) => res.json()).then(function (data) {
 
-    const url = 'https://ipapi.co/json'
 
-    fetch(url)
-        .then((resp) => resp.json())
-        .then(function (data) {
-            console.log(data)
-            let e = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + long + '&appid=' + apiKey + '&units=metric'
             let temp = Math.round(data.main.temp);
             let iconCode = data.weather[0].icon;
             let speedWind = Math.round(data.wind.speed) + " km/h";
@@ -109,20 +106,16 @@ request.onload = function () {
             document.getElementById("dd").innerHTML = data.wind.deg + `°`;
             document.getElementById("sd").innerHTML = speedWind;
         })
-        .catch(function (error) {
-            console.log(JSON.stringify(error));
-        });
+            .catch(function (error) {
+                console.log(JSON.stringify(error));
+            });
 
 
-    console.log(data)
-}
+        console.log(data)
+
+    })
 
 request.send()
 function weather(position) {
-
-
-
-
-
 
 }
