@@ -1,5 +1,5 @@
 ﻿# Weather-app
-This app fetches weather weatherData based on your location.
+This app fetches weather data based on your location.
 
 It uses http://openweathermap.org/ API
 ## Features
