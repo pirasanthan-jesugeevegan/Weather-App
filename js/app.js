@@ -1,12 +1,18 @@
-var apiKey = '3aab69399bf03eca438758bf6e33d18e'
+var request = new XMLHttpRequest()
+var apiKey = '3aab69399bf03eca438758bf6e33d18e';
+var long;
+var lat;
+var data;
+var request = new XMLHttpRequest()
 
-//get location
-navigator.geolocation.getCurrentPosition(weather);
+//getting location using Ip API
+request.open('GET', 'https://ipapi.co/json/', true)
+request.onload = function () {
+    // Begin accessing JSON data here
+    var data = JSON.parse(this.response)
 
-
-function weather(position) {
-    lat = position.coords.latitude
-    long = position.coords.longitude
+    lat = data.latitude
+    long = data.longitude
 
     const url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + long + '&appid=' + apiKey + '&units=metric'
 
@@ -17,7 +23,7 @@ function weather(position) {
             let temp = Math.round(data.main.temp);
             let iconCode = data.weather[0].icon;
             let speedWind = Math.round(data.wind.speed) + " km/h";
-            console.log(data)
+
             var SRD = new Date(data.sys.sunrise * 1000);
             var SSD = new Date(data.sys.sunset * 1000);
 
@@ -104,5 +110,17 @@ function weather(position) {
         .catch(function (error) {
             console.log(JSON.stringify(error));
         });
+
+
+    console.log(data)
+}
+
+request.send()
+function weather(position) {
+
+
+
+
+
 
 }
