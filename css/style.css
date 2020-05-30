@@ -212,4 +212,169 @@ body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
 }
+
+/*
+  ========================>
+  ====== CLOUDS ===========>>
+  ========================>
+ */
+#clouds {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  top: 15%;
+  max-width: 100%;
+}
+
+.cloud {
+  opacity: 0;
+  -webkit-animation-name: cloud-in;
+          animation-name: cloud-in;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+.cloud div {
+  position: absolute;
+  background-color: #cacccc;
+}
+
+.clouds div:nth-child(1) {
+  position: absolute;
+  -moz-transform: scale(0.5);
+  top: 20px;
+  opacity: 1;
+}
+
+#lil-cloud {
+  top: 20px;
+  position: absolute;
+  -webkit-animation-name: move-cloud;
+          animation-name: move-cloud;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+#lil-cloud div {
+  background-color: #a5a6a6;
+  zoom: 0.5;
+}
+
+.cloud div:nth-child(1) {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  left: 5px;
+  top: 95px;
+}
+
+.cloud div:nth-child(2) {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  left: 155px;
+  top: 115px;
+}
+
+.cloud div:nth-child(3) {
+  height: 40px;
+  width: 140px;
+  left: 35px;
+  top: 115px;
+}
+
+.cloud div:nth-child(4) {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  left: 35px;
+  top: 45px;
+}
+
+.cloud div:nth-child(5) {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  left: 120px;
+  top: 85px;
+}
+
+/*
+Keyframe Animations..
+=======================>>>
+*/
+/*
+========================>
+====== CLOUDS ===========>>
+========================>
+*/
+@-webkit-keyframes cloud-in {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes cloud-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes move-cloud {
+  0% {
+    left: calc(100% - 100px);
+    opacity: 0;
+  }
+  10% {
+    left: calc(95% - 100px);
+    opacity: 1;
+  }
+  90% {
+    left: 5%;
+    opacity: 1;
+  }
+  100% {
+    left: 0%;
+    opacity: 0;
+  }
+}
+
+@keyframes move-cloud {
+  0% {
+    left: calc(100% - 100px);
+    opacity: 0;
+  }
+  10% {
+    left: calc(95% - 100px);
+    opacity: 1;
+  }
+  90% {
+    left: 5%;
+    opacity: 1;
+  }
+  100% {
+    left: 0%;
+    opacity: 0;
+  }
+}
+
+/*
+Modifier Classes
+=================>>>
+*/
+.hidden {
+  display: none;
+}
+
+.swap {
+  visibility: hidden;
+}
 /*# sourceMappingURL=style.css.map */

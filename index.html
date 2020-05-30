@@ -13,10 +13,39 @@
         type='text/css'>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+    <script>
+        var myVar;
+
+        function loader() {
+            myVar = setTimeout(showPage, 3000);
+        }
+
+        function showPage() {
+            document.getElementById("clouds").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+        }
+    </script>
 </head>
 
-<body>
-    <div class="app">
+<body onload="loader()" style="margin:0;">
+    <div id='clouds' class='weather clouds '>
+        <div id='lil-cloud' class='cloud'>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id='big-cloud' class='cloud'>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <h1 style=" position: relative;top: 200px">Loading...</h1>
+    </div>
+    <div style="display:none;" id="myDiv" class="app">
         <div id="top-menu-info">
             <p clasa="location">
                 <i class="fa fa-map-marker"></i>
